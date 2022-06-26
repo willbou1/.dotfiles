@@ -1,0 +1,11 @@
+[Unit]
+Description=Deluge Web Daemon
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/deluge-web -d
+
+[Install]
+WantedBy=default.target
+ 

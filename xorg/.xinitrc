@@ -1,0 +1,10 @@
+#! /bin/bash
+
+. "$HOME/.xetc"
+
+USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
+ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+
+exec dwm 2> ~/.log/dwm/dwm.log

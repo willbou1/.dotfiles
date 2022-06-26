@@ -1,0 +1,11 @@
+[Unit]
+Description=Phoenix Miner
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/home/william/.local/phoenixminer/PhoenixMiner
+
+[Install]
+WantedBy=default.target
+ 

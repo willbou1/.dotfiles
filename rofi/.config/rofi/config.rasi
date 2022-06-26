@@ -1,0 +1,74 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+	modi: "window,run,ssh,drun,combi";
+	hover-select: true;
+	window-thumbnail: true;
+	terminal: "alacritty";
+	combi-modi: "window,run,ssh";
+	font: "mono 16";
+	show-icons: true;
+	scroll-method: 4;
+}
+
+element {
+	margin: 3px 0;
+	padding: 5px;
+	border-radius: 12px;
+}
+
+window {
+	padding: 20px;
+}
+
+element-icon {
+	margin: 0 15px 0 0;
+}
+
+#entry {
+	padding: 10px;
+	border-radius: 25px 0 0 25px;
+	placeholder: "";
+	blink: true;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+}
+
+#prompt {
+	enabled: false;
+}
+
+#textbox-prompt-colon {
+	enabled: false;
+}
+
+#inputbar {
+	margin: 0 270px 10px 270px;
+}
+
+#case-indicator {
+	enabled: false;
+}
+
+#num-rows {
+	enabled: true;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	border-radius: 0 25px 25px 0;
+	padding: 0 20px 0 0;
+}
+
+#num-filtered-rows {
+	enabled: true;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+}
+
+#textbox-num-separator {
+	enabled: true;
+	content: " / ";
+	expand: false;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+}
+

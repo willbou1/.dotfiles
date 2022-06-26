@@ -1,0 +1,7 @@
+
+xmonad.hs:73:15: warning: [-Wtabs]
+    Tab character found here, and in 22 further locations.
+    Please use spaces instead.
+   |
+73 |     , ((modm,           xK_b            ), spawn "firefox")
+   |               ^^

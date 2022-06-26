@@ -1,0 +1,10 @@
+[Unit]
+Description=Discord bot
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/home/william/.local/bin/discord_bot
+
+[Install]
+WantedBy=default.target

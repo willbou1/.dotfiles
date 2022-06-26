@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/william/.config/dwm/statscripts'
+let g:netrw_dirhist_8='/etc'
+let g:netrw_dirhist_7='/home/william/.config/dwm/statscripts/mprisinfo.bash'
+let g:netrw_dirhist_6='/home/william/.config/ranger'
+let g:netrw_dirhist_5='/home/william/.config/.dwm'
+let g:netrw_dirhist_4='/usr/share/X11/xorg.conf.d'
+let g:netrw_dirhist_3='/etc/X11'
+let g:netrw_dirhist_2='/'
+let g:netrw_dirhist_1='/home/william'

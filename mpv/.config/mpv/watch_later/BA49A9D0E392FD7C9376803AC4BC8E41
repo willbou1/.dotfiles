@@ -1,0 +1,5 @@
+start=170.058929
+fullscreen=yes
+vf=vapoursynth=file=%51%/home/william/.local/share/SVP4/scripts/8b674392.py:buffered-frames=4:concurrent-frames=25
+panscan=0.500000
+sid=no

@@ -1,0 +1,58 @@
+dropdown_menu = { opacity = 1; };
+popup_menu    = { opacity = 1; };
+utility       = { opacity = 1; };
+
+frame-opacity = 0.75;
+
+# SHADOWS
+shadow = true;
+shadow-radius = 45;
+shadow-opacity = 0.50;
+shadow-offset-x = -45;
+shadow-offset-y = -45;
+shadow-ignore-shaped = true;
+detect-rounded-corners = true;
+
+# FADING
+fading = true;
+fade-in-step = 0.05;
+fade-out-step = 0.05;
+
+shadow-exclude = [
+	"name = 'Notification'",
+	"window_type = 'dock'",
+	"window_type = 'menu'",
+	"window_type = 'dropdown_menu'",
+	"window_type = 'popup_menu'", #start-menu and r-click men
+	"window_type = 'tooltip'",
+	"class_g = 'Conky'",
+	"class_g ?= 'Notify-osd'",
+	"class_g = 'slop'",
+];
+
+# BACKEND
+backend = "glx";
+refresh-rate = 100;
+vsync = false;
+glx-no-stencil = true;
+glx-swap-method = 1;
+mark-vmwin-focused = true;
+mark-overdir-focused = true;
+
+# ROUNDED CORNERS
+corner-radius = 20;
+round-borders = 5;
+rounded-corners-exclude = [
+	"x = 0 && y = 28 && width = 3440 && height = 1412",
+	"x = 3440 && y = 28 && width = 3440 && height = 1412",
+	"class_i = 'dwm'",
+	"class_g = 'dwm'",
+	"! class_i~=''",
+	"window_type = 'menu'",
+	"window_type = 'dropdown_menu'",
+	"window_type = 'popup_menu'", #start-menu and r-click men
+	"window_type = 'tooltip'",
+	"window_type = 'splash'",
+];
+round-borders-exclude = [
+];
