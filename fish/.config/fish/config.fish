@@ -33,7 +33,7 @@ set -U fish_pager_color_prefix        'white' '--bold' '--underline'
 set -U fish_pager_color_progress      'brwhite' '--background=cyan'
 
 function fish_greeting
-	if pgrep -f herbstluftwm > /dev/null
+	if pgrep -f herbstluftwm > /dev/null || pgrep -f sway > /dev/null
 		command cat ~/.cache/wal/sequences
 		neofetch
 	else
