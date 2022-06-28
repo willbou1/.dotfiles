@@ -26,6 +26,7 @@ alias t="trash"
 alias libreoffice="libreoffice --quickstart"
 alias calcurse-caldav='CALCURSE_CALDAV_PASSWORD=$(gpg -dq "$XDG_CONFIG_HOME"/calcurse/caldav/password.gpg) calcurse-caldav'
 alias vid='neovide --multigrid --nofork'
+alias w='curl -s wttr.in | less -RS'
 
 alias sudo="sudo"
 alias s="sudo"

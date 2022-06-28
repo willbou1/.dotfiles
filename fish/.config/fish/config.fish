@@ -1,3 +1,5 @@
+set -gx SHELL /bin/fish
+
 command clear
 
 fish_vi_key_bindings
