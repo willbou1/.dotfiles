@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+wal -n -i ~/priv/pics/wallpapers/gil_nak_won_1.png -o "$HOME/.config/wal/scripts/reload.sh"
+source "/home/william/.cache/wal/colors.sh"
+
+wal_img="$(cat ~/.cache/wal/wal)"
+
+convert -flop "$wal_img" - | feh --bg-fill "$wal_img" -
+
 # this is a simple config for herbstluftwm
 
 hc() {
@@ -121,12 +128,6 @@ hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
 
-wal -n -i ~/priv/pics/wallpapers/gil_nak_won_1.png -o "$HOME/.config/wal/scripts/reload.sh"
-source "/home/william/.cache/wal/colors.sh"
-
-wal_img="$(cat ~/.cache/wal/wal)"
-
-convert -flop "$wal_img" - | feh --bg-fill "$wal_img" -
 
 # theme
 hc attr theme.tiling.reset 1
