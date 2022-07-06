@@ -71,3 +71,5 @@ let g:firenvim_config = {
         \ },
     \ },
 \ }
+
+let g:colors_name = 'pywal'

@@ -230,6 +230,11 @@ _G.packer_plugins = {
     path = "/home/william/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vifm.vim"] = {
+    loaded = true,
+    path = "/home/william/.local/share/nvim/site/pack/packer/start/vifm.vim",
+    url = "https://github.com/vifm/vifm.vim"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/william/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -253,50 +258,50 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require('config.lualine')
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-dap-ui
-time([[Config for nvim-dap-ui]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
-time([[Config for nvim-dap-ui]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 require('config.telescope')
 time([[Config for telescope.nvim]], false)
--- Config for: pywal.nvim
-time([[Config for pywal.nvim]], true)
-require('config.pywal')
-time([[Config for pywal.nvim]], false)
 -- Config for: nvim-dap
 time([[Config for nvim-dap]], true)
 require('config.dap')
 time([[Config for nvim-dap]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-require('config.cmp')
-time([[Config for nvim-cmp]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require('config.ts')
-time([[Config for nvim-treesitter]], false)
 -- Config for: telescope-file-browser.nvim
 time([[Config for telescope-file-browser.nvim]], true)
 try_loadstring("\27LJ\2\nQ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\17file_browser\19load_extension\14telescope\frequire\0", "config", "telescope-file-browser.nvim")
 time([[Config for telescope-file-browser.nvim]], false)
--- Config for: telescope-fzy-native.nvim
-time([[Config for telescope-fzy-native.nvim]], true)
-try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\15fzy_native\19load_extension\14telescope\frequire\0", "config", "telescope-fzy-native.nvim")
-time([[Config for telescope-fzy-native.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require('config.lualine')
+time([[Config for lualine.nvim]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+require('config.cmp')
+time([[Config for nvim-cmp]], false)
 -- Config for: spellsitter.nvim
 time([[Config for spellsitter.nvim]], true)
 try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16spellsitter\frequire\0", "config", "spellsitter.nvim")
 time([[Config for spellsitter.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: telescope-fzy-native.nvim
+time([[Config for telescope-fzy-native.nvim]], true)
+try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\15fzy_native\19load_extension\14telescope\frequire\0", "config", "telescope-fzy-native.nvim")
+time([[Config for telescope-fzy-native.nvim]], false)
+-- Config for: pywal.nvim
+time([[Config for pywal.nvim]], true)
+require('config.pywal')
+time([[Config for pywal.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require('config.ts')
+time([[Config for nvim-treesitter]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
 if should_profile then save_profiles() end
 
 end)

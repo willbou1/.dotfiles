@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-wal -n -i ~/priv/pics/wallpapers/gil_nak_won_1.png -o "$HOME/.config/wal/scripts/reload.sh"
+wal -n -i "$(cat ~/priv/pics/wallpapers/curr)" -o "$HOME/.config/wal/scripts/reload.sh"
 source "/home/william/.cache/wal/colors.sh"
 
 wal_img="$(cat ~/.cache/wal/wal)"
@@ -26,12 +26,13 @@ Mod=Mod4    # Use alt as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
-hc keybind $Mod-Return spawn "alacritty" # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Return spawn "kitty" # use your $TERMINAL with xterm as fallback
 
 hc keybind $Mod-b spawn "firefox-beta"
 hc keybind $Mod-d spawn "rofi" "-show" "combi"
 hc keybind $Mod-e spawn "emacsclient" "-c"
 hc keybind $Mod-m spawn "element-desktop-nightly"
+hc keybind $Mod-w spawn "rofi" "-show" "pywal" "-modi" "pywal:~/.config/rofi/pywal.sh"
 
 # basic movement in tiling and floating mode
 # focusing clients
@@ -164,6 +165,7 @@ hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 hc set update_dragged_clients 1
+hc set hide_covered_windows 1
 
 
 # rules
