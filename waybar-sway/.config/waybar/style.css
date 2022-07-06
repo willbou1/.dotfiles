@@ -1,0 +1,59 @@
+@import url("../../.cache/wal/colors-waybar-sway.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Terminus;
+    font-size: 12px;
+    min-height: 0;
+}
+window#waybar {
+    background: @background;
+    color: @foreground;
+}
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+    color: @foreground;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+#workspaces button.focused {
+    background: @foregroundTrans;
+    color: @background
+}
+#mode, #clock, #xmr, #memory, #pulseaudio, #pulseaudio.muted, #idle_inhibitor {
+    padding: 0 10px;
+    margin: 0 10px;
+    background: transparent;
+    background-color: transparent;
+    color: @foreground;
+}
+#mode {
+}
+#memory {
+}
+#clock {
+}
+#idle_inhibitor {
+}
+#pulseaudio {
+}
+#pulseaudio.muted {
+}
+#battery {
+	padding-right: 10px;
+	margin-right: 10px;
+}
+
+#battery.warning {
+	color: @background;
+	background: @foregroundTrans;
+}
+
+#battery.critical {
+	color: @background;
+	background: @color1;
+}

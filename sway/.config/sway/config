@@ -9,7 +9,7 @@ include "$HOME/.cache/wal/colors-sway"
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+set $mod Mod1
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -22,7 +22,7 @@ set $browser chromium
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu swaymsg exec "wofi --show combi"
+set $menu swaymsg exec "wofi --show drun"
 
 ### Output configuration
 #
@@ -59,6 +59,10 @@ exec swayidle -w \
 input * {
 	xkb_layout "ca"
 	xkb_variant "multi"
+	dwt enabled
+	tap enabled
+	natural_scroll disabled
+	middle_emulation enabled
 }
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -212,7 +216,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #
 # Style:
 #
-gaps inner 20
+gaps inner 10
 gaps outer 5
 smart_gaps on
 default_border pixel 3

@@ -31,18 +31,18 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local lsp_installer = require("nvim-lsp-installer")
 
 lsp_installer.setup({
-	automatic_installation = true,
-	uses_new_setup = false,
-	ensure_installed = {
-		"awk_ls", "angularls", "asm_lsp",
-		"bashls", "ccls", "csharp_ls",
-		"cmake", "cssls", "docker",
-		"html", "hls", "jsonls",
-		"tsserver", "texlab", "sumneko_lua",
-		"marksman", --[["nimls",]] "perlnavigator",
-		"pyright", "solargraph", "rust_analyzer",
-		"sqlls", "taplo", "lemminx", "yamlls"
-	},
+	automatic_installation = false,
+	uses_new_setup = true,
+--	ensure_installed = {
+--		"awk_ls", "angularls", "asm_lsp",
+--		"bashls", "ccls", "csharp_ls",
+--		"cmake", "cssls", "docker",
+--		"html", "hls", "jsonls",
+--		"tsserver", "texlab", "sumneko_lua",
+--		"marksman", --[["nimls",]] "perlnavigator",
+--		"pyright", "solargraph", "rust_analyzer",
+--		"sqlls", "taplo", "lemminx", "yamlls"
+--	},
 })
 
 local opts = {
@@ -90,7 +90,7 @@ lspconfig.sumneko_lua.setup {
 	}
 }
 lspconfig.marksman.setup(opts)
---lspconfig.nimls.setup(opts)
+lspconfig.nimls.setup(opts)
 lspconfig.perlnavigator.setup(opts)
 lspconfig.pyright.setup(opts)
 lspconfig.solargraph.setup(opts)
