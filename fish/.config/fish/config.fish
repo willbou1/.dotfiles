@@ -1,5 +1,26 @@
 set -gx SHELL /bin/fish
 
+#Change layout to allow swallowing
+function swallow
+	alias hc=herbstclient
+	if pgrep -f herbstluftwm > /dev/null
+		set HWM_LAYOUT (hc attr tags.focus.tiling.focused_frame.algorithm)
+		set i 0	
+		while test (hc attr tags.focus.tiling.focused_frame.client_count) != 1
+			hc split explode
+			set i (math $i + 1)
+		end
+		hc set_layout "max"
+		command $argv
+		for t in (seq 1 $i)
+			hc remove
+		end
+		herbstclient set_layout $HWM_LAYOUT
+	end
+end
+alias mpv="swallow mpv"
+alias feh="swallow feh"
+
 command clear
 
 fish_vi_key_bindings
@@ -35,9 +56,14 @@ set -U fish_pager_color_prefix        'white' '--bold' '--underline'
 set -U fish_pager_color_progress      'brwhite' '--background=cyan'
 
 function fish_greeting
+	set r (random 0 100)
 	if pgrep -f herbstluftwm > /dev/null || pgrep -f sway > /dev/null
 		command cat ~/.cache/wal/sequences
-		neofetch
+		if test $TERM = "xterm-kitty"; and test $r -ge 80
+			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image.png --size 549px --crop_offset north
+		else
+			neofetch
+		end
 	else
 		neofetch | lolcat -a -s 1000 -d 8
 	end

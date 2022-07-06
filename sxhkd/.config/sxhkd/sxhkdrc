@@ -1,8 +1,8 @@
 XF86AudioPlay
-	playerctl play-pause
+	playerctl play
 
 XF86AudioPause
-	playerctl play-pause
+	playerctl pause
 
 XF86AudioStop
 	playerctl stop

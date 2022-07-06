@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
 			require'colorizer'.setup()
 		end
 	}
+	use { "vifm/vifm.vim" }
 
 	use {
 	    'glacambre/firenvim',

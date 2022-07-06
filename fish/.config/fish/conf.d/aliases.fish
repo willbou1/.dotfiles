@@ -19,6 +19,11 @@ alias g='goto'
 alias y='ytfzf'
 alias xt='extract'
 
+if test $TERM = "xterm-kitty"
+	alias icat="kitty +kitten icat"
+	alias s="kitty +kitten ssh"
+end
+
 alias mutt="neomutt"
 alias ftp="lftp"
 alias img="mpv --config-dir=$HOME/.config/mpv/mvi"
