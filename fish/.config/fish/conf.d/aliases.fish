@@ -7,7 +7,8 @@ alias ip='ip --color=auto'
 
 alias v="vifmrun"
 alias sv="sudoedit"
-alias userctl='systemctl --user'
+alias uc='systemctl --user'
+alias sc='sudo systemctl'
 alias ls='lsd'
 alias l='lsd -l'
 alias la='lsd -a'

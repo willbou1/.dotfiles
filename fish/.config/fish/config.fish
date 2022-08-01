@@ -59,8 +59,12 @@ function fish_greeting
 	set r (random 0 100)
 	if pgrep -f herbstluftwm > /dev/null || pgrep -f sway > /dev/null
 		command cat ~/.cache/wal/sequences
-		if test $TERM = "xterm-kitty"; and test $r -ge 80
-			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image.png --size 549px --crop_offset north
+		if test $TERM = "xterm-kitty"; and test $r -ge 84
+			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image.png --size 548px --crop_offset north
+		else if test $TERM = "xterm-kitty"; and test $r -ge 68
+			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image2.png --size 548px --crop_offset north
+		else if test $TERM = "xterm-kitty"; and test $r -ge 50
+			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image3.png --size 548px --crop_offset north
 		else
 			neofetch
 		end
@@ -69,3 +73,5 @@ function fish_greeting
 	end
 end
 alias clear="command clear; fish_greeting"
+
+starship init fish | source

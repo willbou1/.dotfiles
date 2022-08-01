@@ -229,3 +229,15 @@
 
 2022/06/23 (12:49:50) | ===> btop++ v.1.0.13
 2022/06/23 (12:49:50) | WARNING: No good candidate for cpu sensor found, using random from all found sensors.
+
+2022/07/10 (01:24:19) | ===> btop++ v.1.2.8
+2022/07/10 (01:24:19) | ERROR: Stall in Runner thread, restarting!
+
+2022/07/11 (19:18:42) | ===> btop++ v.1.2.8
+2022/07/11 (19:18:42) | ERROR: Stall in Runner thread, restarting!
+
+2022/07/13 (19:24:00) | ===> btop++ v.1.2.8
+2022/07/13 (19:24:00) | ERROR: Stall in Runner thread, restarting!
+
+2022/07/18 (07:52:32) | ===> btop++ v.1.2.8
+2022/07/18 (07:52:32) | ERROR: Stall in Runner thread, restarting!
