@@ -1,0 +1,13 @@
+2022/10/09-14:49:19.520 2ba2f Reusing MANIFEST /home/william/.config/Vieb/Partitions/main/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/09-14:49:19.520 2ba2f Recovering log #6
+2022/10/09-14:49:19.530 2ba2f Reusing old log /home/william/.config/Vieb/Partitions/main/IndexedDB/https_teams.microsoft.com_0.indexeddb.leveldb/000006.log 
+2022/10/09-14:49:26.468 2b9ab Level-0 table #11: started
+2022/10/09-14:49:26.480 2b9ab Level-0 table #11: 1527547 bytes OK
+2022/10/09-14:49:26.483 2b9ab Delete type=0 #6
+2022/10/09-14:49:27.171 2b9ab Compacting 1@1 + 1@2 files
+2022/10/09-14:49:27.192 2b9ab Generated table #12@1: 7015 keys, 2155764 bytes
+2022/10/09-14:49:27.197 2b9ab Generated table #13@1: 1931 keys, 104031 bytes
+2022/10/09-14:49:27.197 2b9ab Compacted 1@1 + 1@2 files => 2259795 bytes
+2022/10/09-14:49:27.200 2b9ab compacted to: files[ 0 0 2 0 0 0 0 ]
+2022/10/09-14:49:27.200 2b9ab Delete type=2 #8
+2022/10/09-14:49:27.200 2b9ab Delete type=2 #11

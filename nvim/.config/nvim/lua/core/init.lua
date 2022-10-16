@@ -9,3 +9,4 @@ vim.cmd [[
 
 require('impatient')
 require('core.plugins')
+require('init.lsp')

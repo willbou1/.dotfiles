@@ -28,3 +28,6 @@ g.firenvim_config = {
 	},
 	localSettings = local_settings
 }
+
+-- undotree
+g.undotree_DiffAutoOpen = 0

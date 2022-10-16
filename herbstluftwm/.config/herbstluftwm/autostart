@@ -29,6 +29,7 @@ hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn "kitty" # use your $TERMINAL with xterm as fallback
 
 hc keybind $Mod-b spawn "firefox-beta"
+hc keybind $Mod-Shift-b spawn "firefox-beta" "--private-window"
 hc keybind $Mod-d spawn "rofi" "-show" "combi"
 hc keybind $Mod-e spawn "emacsclient" "-c"
 hc keybind $Mod-m spawn "element-desktop-nightly"
@@ -183,7 +184,6 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule class~'Element-Nightly' tag=5
 hc rule class~'mpv' tag=4
 hc rule class~'SVPManager' tag=9
-hc rule class~'tidal-hifi' tag=6
 
 hc set tree_style '╾│ ├└╼─┐'
 

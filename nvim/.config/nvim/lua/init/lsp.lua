@@ -41,7 +41,8 @@ lsp_installer.setup({
 --		"tsserver", "texlab", "sumneko_lua",
 --		"marksman", --[["nimls",]] "perlnavigator",
 --		"pyright", "solargraph", "rust_analyzer",
---		"sqlls", "taplo", "lemminx", "yamlls"
+--		"sqlls", "taplo", "lemminx", "yamlls",
+--		"emmet_ls", "dartls"
 --	},
 })
 
@@ -99,3 +100,5 @@ lspconfig.sqlls.setup(opts)
 lspconfig.taplo.setup(opts)
 lspconfig.lemminx.setup(opts)
 lspconfig.yamlls.setup(opts)
+lspconfig.emmet_ls.setup(opts)
+lspconfig.dartls.setup(opts)

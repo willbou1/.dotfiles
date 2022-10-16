@@ -1,10 +1,10 @@
 xrandr --output DisplayPort-0 --mode 3440x1440 --rate 99.98 --set TearFree on --output HDMI-A-0 --mode 3440x1440 --rate 99.98 --set TearFree on --left-of DisplayPort-0
 
 # XDG Xorg
-USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
-USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
-ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
-ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export USERXSESSION="$XDG_CACHE_HOME/X11/xsession"
+export USERXSESSIONRC="$XDG_CACHE_HOME/X11/xsessionrc"
+export ALTUSERXSESSION="$XDG_CACHE_HOME/X11/Xsession"
+export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
 
 # THEMING
 xrdb "$HOME/.config/X11/xresources"

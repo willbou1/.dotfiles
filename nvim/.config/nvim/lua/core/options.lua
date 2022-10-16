@@ -1,3 +1,5 @@
+os = require('os')
+
 local o = vim.opt
 
 o.termguicolors = true
@@ -19,3 +21,7 @@ o.splitright = true
 o.spelllang = 'en_ca'
 
 o.guifont = 'Monospace:h18'
+
+o.undofile = true
+local state_home = os.getenv('XDG_STATE_HOME') or '~/.local/state'
+o.undodir = state_home .. '/nvim/undo'

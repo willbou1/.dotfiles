@@ -17,11 +17,11 @@ thresholds = { 0 = "night", 15 = "dark", 30 = "dim", 45 = "normal", 60 = "bright
 #capturer = "wlroots"
 
 [[output.ddcutil]]
-name = "11474"
+name = "HDMI-A-1"
 capturer = "wlroots"
 
 [[output.ddcutil]]
-name = "11426"
+name = "DP-1"
 capturer = "wlroots"
 
 #[[keyboard]]

@@ -1,3 +1,12 @@
+function sudo -d "sudo wrapper that handles aliases"
+    if functions -q -- $argv[1]
+        set -l new_args (string join ' ' -- (string escape -- $argv))
+        set argv fish -c "$new_args"
+    end
+
+    command sudo $argv
+end
+
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -19,6 +28,7 @@ alias cat='bat'
 alias g='goto'
 alias y='ytfzf'
 alias xt='extract'
+alias fd='fd -H'
 
 if test $TERM = "xterm-kitty"
 	alias icat="kitty +kitten icat"
@@ -33,9 +43,12 @@ alias libreoffice="libreoffice --quickstart"
 alias calcurse-caldav='CALCURSE_CALDAV_PASSWORD=$(gpg -dq "$XDG_CONFIG_HOME"/calcurse/caldav/password.gpg) calcurse-caldav'
 alias vid='neovide --multigrid --nofork'
 alias w='curl -s wttr.in | less -RS'
+alias vpn='expressvpn'
 
-alias sudo="sudo"
-alias s="sudo"
+alias hc="herbstclient"
+alias hlc="hyprctl"
+
+alias s="sudo "
 
 alias kn="s kexec -l /boot/vmlinuz-linux --initrd=/boot/initramfs-linux.img --reuse-cmdline && s systemctl kexec"
 alias kh="s kexec -l /boot/vmlinuz-linux-hardened --initrd=/boot/initramfs-linux-hardened.img --reuse-cmdline && s systemctl kexec"

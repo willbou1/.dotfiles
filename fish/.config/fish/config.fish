@@ -3,6 +3,7 @@ set -gx SHELL /bin/fish
 #Change layout to allow swallowing
 function swallow
 	alias hc=herbstclient
+	alias hlc=hyprctl
 	if pgrep -f herbstluftwm > /dev/null
 		set HWM_LAYOUT (hc attr tags.focus.tiling.focused_frame.algorithm)
 		set i 0	
@@ -16,10 +17,21 @@ function swallow
 			hc remove
 		end
 		herbstclient set_layout $HWM_LAYOUT
+	else if pgrep -f Hyprland > /dev/null
+		command $argv &
+		set PID (jobs -l | awk '{print $2}')
+		while not hyprctl -j clients | jq -e ".[] | select(.pid == $PID)"
+			sleep 0.1
+		end
+		hlc dispatch togglegroup none
+	else
+		command $argv
 	end
 end
 alias mpv="swallow mpv"
 alias feh="swallow feh"
+alias zathura='zathura-pywal -a 0.75 && swallow zathura'
+alias tuir='swallow tuir --enable-media'
 
 command clear
 
@@ -57,19 +69,17 @@ set -U fish_pager_color_progress      'brwhite' '--background=cyan'
 
 function fish_greeting
 	set r (random 0 100)
-	if pgrep -f herbstluftwm > /dev/null || pgrep -f sway > /dev/null
+	if pgrep -f herbstluftwm > /dev/null || pgrep -f Hyprland > /dev/null
 		command cat ~/.cache/wal/sequences
-		if test $TERM = "xterm-kitty"; and test $r -ge 84
-			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image.png --size 548px --crop_offset north
-		else if test $TERM = "xterm-kitty"; and test $r -ge 68
-			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image2.png --size 548px --crop_offset north
-		else if test $TERM = "xterm-kitty"; and test $r -ge 50
-			neofetch --kitty $XDG_CONFIG_HOME/neofetch/image3.png --size 548px --crop_offset north
-		else
-			neofetch
-		end
+	end
+	if test $TERM = "xterm-kitty"; and test $r -ge 84
+		neofetch --kitty $XDG_CONFIG_HOME/neofetch/image.png --size 548px --crop_offset north
+	else if test $TERM = "xterm-kitty"; and test $r -ge 68
+		neofetch --kitty $XDG_CONFIG_HOME/neofetch/image2.png --size 548px --crop_offset north
+	else if test $TERM = "xterm-kitty"; and test $r -ge 50
+		neofetch --kitty $XDG_CONFIG_HOME/neofetch/image3.png --size 548px --crop_offset north
 	else
-		neofetch | lolcat -a -s 1000 -d 8
+		neofetch
 	end
 end
 alias clear="command clear; fish_greeting"

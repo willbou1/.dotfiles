@@ -9,7 +9,7 @@ end
 local augroup = api.nvim_create_augroup('packer_auto_compile', {clear = true})
 
 api.nvim_create_autocmd('BufWritePost', {
-	pattern = '*/nvim/lua/**/plugins.lua',
+	pattern = '*/nvim/lua/core/plugins.lua',
 	group = augroup,
 	desc = 'Compile packer file after it\'s changed',
 	command = 'source <afile> | PackerCompile'
@@ -17,6 +17,7 @@ api.nvim_create_autocmd('BufWritePost', {
 
 -- Load packer.nvim
 return require('packer').startup(function(use)
+	use 'elkowar/yuck.vim'
 	use 'wbthomason/packer.nvim'
 	use { 'lewis6991/impatient.nvim' }
 
@@ -72,6 +73,13 @@ return require('packer').startup(function(use)
 	}
 	use { 'vimpostor/vim-tpipeline' }
 
+	use {
+		'romgrk/barbar.nvim',
+		requires = {'kyazdani42/nvim-web-devicons'},
+		config = [[require('config.barbar')]]
+	}
+
+
 	use { 'tpope/vim-fugitive' }
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -110,6 +118,13 @@ return require('packer').startup(function(use)
 		config = [[require('config.cmp')]]
 	}
 
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
+
 	use { 'hrsh7th/vim-vsnip' }
 
 	use {
@@ -126,6 +141,7 @@ return require('packer').startup(function(use)
 		end
 	}
 
+	use { 'mbbill/undotree' }
 
 	if packer_bootstrap then
 		require('packer').sync()

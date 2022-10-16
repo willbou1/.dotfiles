@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = false
 scan_timeout = 10
-command_timeout = 500
+command_timeout = 750
 
 format = """
 [⌜ ](bold cyan)[ ](bold blue)$username\
@@ -134,3 +134,6 @@ format = "[$symbol($version )]($style)"
 
 [lua]
 format = "[$symbol($version )]($style)"
+
+[c]
+format = "[$symbol($version(-$name) )]($style)"
