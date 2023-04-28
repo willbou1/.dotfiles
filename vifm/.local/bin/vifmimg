@@ -2,11 +2,11 @@
 export PCACHE="$HOME/.cache/vifm/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$PWD/$6")" | sha256sum | awk '{print $1}'))"
 
 pclear() {
-	printf '{"action": "remove", "identifier": "vifm-preview"}\n' > "$FIFO_UEBERZUG"
+    kitten icat --clear --silent
 }
 
 image() {
-		printf '{"action": "add", "identifier": "vifm-preview", "x": "%s", "y": "%s", "width": "%s", "height": "%s", "scaler": "distort", "path": "%s"}\n' "$2" "$3" "$4" "$5" "$6" > "$FIFO_UEBERZUG"
+    kitten icat --silent --transfer-mode=file --scale-up "--place=$4x$5@$2x$3" $6
 }
 
 main() {

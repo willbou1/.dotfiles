@@ -1,0 +1,6 @@
+2022/11/25-17:27:41.970 322d09 Reusing MANIFEST /home/william/.config/Vieb/Partitions/main/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/11/25-17:27:41.970 322d09 Recovering log #3
+2022/11/25-17:27:41.972 322d09 Reusing old log /home/william/.config/Vieb/Partitions/main/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2022/11/25-17:35:10.159 323108 Level-0 table #5: started
+2022/11/25-17:35:10.166 323108 Level-0 table #5: 1049553 bytes OK
+2022/11/25-17:35:10.169 323108 Delete type=0 #3

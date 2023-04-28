@@ -16,12 +16,12 @@
 
 (defpoll b1
   :initial "70"
-  :interval "2s"
+  :interval "0ms"
   "scripts/brightness_info -1")
 
 (defpoll b2
   :initial "70"
-  :interval "2s"
+  :interval "0ms"
   "scripts/brightness_info -2")
 
 (defpoll audio_sink_volume
@@ -40,7 +40,7 @@
   :wm-ignore true
   :monitor 1
   :geometry (geometry
-  :width "540"
+  :width "560"
   :height "60"
   :x "840"
   :y "20")
@@ -63,6 +63,7 @@
     :vexpand false
     :hexpand false
     (button
+      :timeout "2000ms"
       :onclick "scripts/brightness_control --toggle"
       (image
         :class "center_icons"
@@ -105,7 +106,7 @@
                 :value b1
                 :orientation "h"
                 :tooltip "Adbust brightness"
-                :onchange "${onchange_brightness_bar} --synced {}")))))
+                :onchange "${onchange_brightness_bar} --synced {}; ${eww} update onchange_brightness_bar=\"true\"")))))
       (revealer
         :reveal "${brightness_reveal}"
         :transition "slideup"
@@ -132,7 +133,7 @@
                 :value b1
                 :orientation "h"
                 :tooltip "Adbust brightness for DP-1"
-                :onchange "${onchange_brightness_bar} -1 {}")))
+                :onchange "${onchange_brightness_bar} -1 {}; ${eww} update onchange_brightness_bar=\"true\"")))
           (box
             :class b2_bar_class
             :halign "center"
@@ -151,7 +152,7 @@
                 :value b2
                 :orientation "h"
                 :tooltip "Adbust brightness for DP-1"
-                :onchange "${onchange_brightness_bar} -2 {}"))))))))
+                :onchange "${onchange_brightness_bar} -2 {}; ${eww} update onchange_brightness_bar=\"true\""))))))))
 
 (defwidget audio_sink []
   (box 

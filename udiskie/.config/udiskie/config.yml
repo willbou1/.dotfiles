@@ -1,5 +1,3 @@
 device_config:
-- device_file: /dev/sda3
-  automount: false
-- device_file: /dev/sdb2
+- device_file: /dev/sda2
   automount: false

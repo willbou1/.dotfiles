@@ -109,11 +109,14 @@ set rulerformat=
 set relativenumber
 highlight LineNr ctermbg=NONE ctermfg=243
 
-command! FZFfind : 
-                \| let $FZF_PICK = term('find . 2>/dev/null | fzf 2>/dev/tty')
-                \| if $FZF_PICK != ''
-                \|     execute 'goto' fnameescape($FZF_PICK)
-                \| endif
+" Fzf through bookmarks
+if $TMUX
+    command! fdcddir :execute 'cd "'.system('fd -HE ''.git'' -t d . | fzf-tmux -p 90,30').'"'
+else
+    command! fdcddir :execute 'cd "'.term('fd -HE ''.git'' -t d . | fzf 2>/dev/tty').'"'
+endif
+
+nnoremap <space>e :fdcddir<cr>
 " }}}
 
 
@@ -154,49 +157,49 @@ fileviewer *.html w3m -dump %c
 filextype *.html,*.htm nvim %f 2>/dev/null &
 
 " Text based files
-filetype <text/*> nvim
-fileviewer <text/*> env -uCOLORTERM bat --color always --wrap never --pager never %c -p
+filetype <text/*>,*.sh nvim
+fileviewer <text/*>,*.sh env -uCOLORTERM bat --color always --wrap never --pager never %c -p
 
 " PDFs
 filextype *.pdf zathura %c %i &
 fileviewer *.pdf
-        \ vifmimg pdf %px %py %pw %ph %c
+        \ vifmimg pdf %px %py %pw %ph %c >/dev/tty </dev/tty %N
         \ %pc
-        \ vifmimg clear
+        \ vifmimg clear >/dev/tty </dev/tty %N
 
 " ePUBs
 filextype *.epub zathura %c %i &
 fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
+        \ vifmimg epub %px %py %pw %ph %c >/dev/tty </dev/tty %N
         \ %pc
-        \ vifmimg clear
+        \ vifmimg clear >/dev/tty </dev/tty %N
 
 " Fonts
 fileviewer *.otf,*.ttf,*.woff
-        \ vifmimg font %px %py %pw %ph %c
+        \ vifmimg font %px %py %pw %ph %c >/dev/tty </dev/tty %N
         \ %pc
-        \ vifmimg clear
+        \ vifmimg clear >/dev/tty </dev/tty %N
 
 " Audios
 filetype <audio/*> mpv %c %i </dev/null &>/dev/null &
 fileviewer <audio/*>
-        \ vifmimg audio %px %py %pw %ph %c
+        \ vifmimg audio %px %py %pw %ph %c >/dev/tty </dev/tty %N
         \ %pc
-        \ vifmimg clear
+        \ vifmimg clear >/dev/tty </dev/tty %N
 
 " Videos
 filetype <video/*> mpv %c %i </dev/null &>/dev/null &
 fileviewer <video/*>
-        \ vifmimg video %px %py %pw %ph %c
+        \ vifmimg video %px %py %pw %ph %c >/dev/tty </dev/tty %N
         \ %pc
-        \ vifmimg clear
+        \ vifmimg clear >/dev/tty </dev/tty %N
 
 " Images
-filextype <image/*> mpv %c %i </dev/null &>/dev/null &
+filextype <image/*> feh %c %i </dev/null &>/dev/null &
 fileviewer <image/*>
-        \ vifmimg draw %px %py %pw %ph %c
+        \ vifmimg draw %px %py %pw %ph %c >/dev/tty </dev/tty %N
         \ %pc
-        \ vifmimg clear
+        \ vifmimg clear >/dev/tty </dev/tty %N
 
 " Archives
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
@@ -212,8 +215,8 @@ fileview ../ echo >/dev/null
 
 " Show ls in the preview window, it creates a similar look as ranger.
 " The default directory tree thing is really messy
-fileviewer */ ls --color --group-directories-first
-fileviewer .*/ ls --color --group-directories-first
+fileviewer */ lsd --color always --icon always
+fileviewer .*/ lsd --color always --icon always
 
 " Other files
 " Using xdg-open to open the highlighted file with a compatible program and

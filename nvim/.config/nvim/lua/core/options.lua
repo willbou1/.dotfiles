@@ -15,6 +15,10 @@ o.colorcolumn = '80'
 o.clipboard = 'unnamedplus'
 o.fillchars = { vert = '\\' }
 
+o.tabstop = 4
+o.shiftwidth = 4
+o.expandtab = true
+
 o.splitbelow = true
 o.splitright = true
 
@@ -25,3 +29,5 @@ o.guifont = 'Monospace:h18'
 o.undofile = true
 local state_home = os.getenv('XDG_STATE_HOME') or '~/.local/state'
 o.undodir = state_home .. '/nvim/undo'
+
+o.cmdheight = 0

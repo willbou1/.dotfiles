@@ -9,12 +9,12 @@ end
 
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
+alias grep='rg'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ip='ip --color=auto'
 
-alias v="vifmrun"
+alias v="vifm"
 alias sv="sudoedit"
 alias uc='systemctl --user'
 alias sc='sudo systemctl'
@@ -25,17 +25,21 @@ alias lla='lsd -la'
 alias ll='lsd -laF'
 alias lt='lsd --tree'
 alias cat='bat'
-alias g='goto'
 alias y='ytfzf'
 alias xt='extract'
 alias fd='fd -H'
+alias du='du -h'
+alias free='free -h'
+alias df='df -h'
+alias p='procs'
+alias c="clear"
 
 if test $TERM = "xterm-kitty"
 	alias icat="kitty +kitten icat"
 	alias s="kitty +kitten ssh"
 end
 
-alias mutt="neomutt"
+alias mutt="TERM=screen-256color neomutt"
 alias ftp="lftp"
 alias img="mpv --config-dir=$HOME/.config/mpv/mvi"
 alias t="trash"
@@ -44,6 +48,8 @@ alias calcurse-caldav='CALCURSE_CALDAV_PASSWORD=$(gpg -dq "$XDG_CONFIG_HOME"/cal
 alias vid='neovide --multigrid --nofork'
 alias w='curl -s wttr.in | less -RS'
 alias vpn='expressvpn'
+alias virsh='virsh -c qemu:///system'
+alias vs='virsh'
 
 alias hc="herbstclient"
 alias hlc="hyprctl"

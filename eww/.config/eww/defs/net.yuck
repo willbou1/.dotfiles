@@ -31,9 +31,9 @@
   :wm-ignore true
   :monitor 1
   :geometry (geometry
-  :width "370"
+  :width "390"
   :height "60"
-  :x "2530"
+  :x "2510"
   :y "20")
   (eventbox
     :class "bars"
@@ -137,6 +137,7 @@
               :image-height 15)
             (label
               :text net_ip
+              :class "net_side_info"
               )
 
             )
@@ -150,6 +151,7 @@
               :image-height 15)
             (label
               :text net_vpn
+              :class "net_side_info"
               )
 
             )

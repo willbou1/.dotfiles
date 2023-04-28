@@ -2,7 +2,7 @@
 
 case $1 in
 	"--ip")
-		nmcli dev show wlp5s0 | awk '/IP4.ADDRESS/ {print $2}'
+		nmcli dev show wlp6s0 | awk '/IP4.ADDRESS/ {print $2}'
 		;;
 	"--strength")
 		nmcli -f IN-USE,SIGNAL device wifi | awk '/\*/ {print $2}'
@@ -11,7 +11,7 @@ case $1 in
 		expressvpn status | grep "Connected to" | cut -d " " -f3-
 		;;
 	"--name")
-		nmcli dev show wlp5s0 | awk '/GENERAL.CONNECTION/ {print $2}'
+		nmcli dev show wlp6s0 | awk '/GENERAL.CONNECTION/ {print substr($2, 0, 6)}'
 		;;
 	"--bandwidth")
 		f="$(awk '/wlp5s0/ {print $2}'  /proc/net/dev)"

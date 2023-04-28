@@ -17,10 +17,47 @@ api.nvim_create_autocmd('BufWritePost', {
 
 -- Load packer.nvim
 return require('packer').startup(function(use)
-	use 'elkowar/yuck.vim'
-	use 'wbthomason/packer.nvim'
+	use { 'elkowar/yuck.vim' }
+	use { 'wbthomason/packer.nvim' }
 	use { 'lewis6991/impatient.nvim' }
 
+    use {
+        'edluffy/hologram.nvim',
+        config = function ()
+            require('hologram').setup{
+                auto_display = true
+            }
+        end
+    }
+
+	use { "vifm/vifm.vim" }
+
+	use {
+	    'glacambre/firenvim',
+	    run = function() vim.fn['firenvim#install'](0) end
+	}
+	use { "turbio/bracey.vim" }
+
+	use { 'tpope/vim-fugitive' }
+
+	use {
+		'mg979/vim-visual-multi',
+		branch = 'master'
+	}
+
+	use { 'hrsh7th/vim-vsnip' }
+
+	use { 'mbbill/undotree' }
+
+    use {
+        'nvim-orgmode/orgmode',
+        config = function()
+            require('orgmode').setup_ts_grammar()
+            require('orgmode').setup{}
+        end
+    }
+
+    -- Theming ----------------------------------------------------------------
 	use { "ellisonleao/gruvbox.nvim" }
 	use {
 		"AlphaTechnolog/pywal.nvim",
@@ -35,14 +72,51 @@ return require('packer').startup(function(use)
 			require'colorizer'.setup()
 		end
 	}
-	use { "vifm/vifm.vim" }
 
+    -- Treesitter -------------------------------------------------------------
 	use {
-	    'glacambre/firenvim',
-	    run = function() vim.fn['firenvim#install'](0) end
+		'nvim-treesitter/nvim-treesitter',
+		run = ':TSUpdate',
+		config = [[require('config.ts')]]
 	}
-	use { "turbio/bracey.vim" }
+	use {
+		'lewis6991/spellsitter.nvim',
+		requires = 'nvim-treesitter/nvim-treesitter',
+		config = function ()
+			require('spellsitter').setup()
+		end
+	}
+	use { 'vigoux/architext.nvim' }
+	use { 'nvim-treesitter/playground' }
 
+    -- Tmux  ------------------------------------------------------------------
+    use({
+        "aserowy/tmux.nvim",
+        config = function() return require("tmux").setup() end
+    })
+
+    -- UI ---------------------------------------------------------------------
+    use {
+        'nvim-tree/nvim-web-devicons'
+    }
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+		config = [[require('config.lualine')]]
+	}
+	use { 'vimpostor/vim-tpipeline' }
+	use {
+		'romgrk/barbar.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons' },
+		config = [[require('config.barbar')]]
+	}
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+        config = [[require('config.startup')]]
+    }
+
+    -- Telescope --------------------------------------------------------------
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = {
@@ -66,45 +140,21 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-		config = [[require('config.lualine')]]
-	}
-	use { 'vimpostor/vim-tpipeline' }
-
-	use {
-		'romgrk/barbar.nvim',
-		requires = {'kyazdani42/nvim-web-devicons'},
-		config = [[require('config.barbar')]]
-	}
-
-
-	use { 'tpope/vim-fugitive' }
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate',
-		config = [[require('config.ts')]]
-	}
-
-	use {
-		'lewis6991/spellsitter.nvim',
-		requires = 'nvim-treesitter/nvim-treesitter',
-		config = function ()
-			require('spellsitter').setup()
-		end
-	}
-	use { 'vigoux/architext.nvim' }
-	use { 'nvim-treesitter/playground' }
-
-	use {
-		'mg979/vim-visual-multi',
-		branch = 'master'
-	}
-
-	use 'neovim/nvim-lspconfig'
-	use { 'williamboman/nvim-lsp-installer' }
-
+    -- LSP plugins ------------------------------------------------------------
+    use {
+        "williamboman/mason.nvim",
+        config = function ()
+            require('mason').setup()
+        end
+    }
+    use {
+        requires = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        },
+        "neovim/nvim-lspconfig",
+        config = [[require('config.lsp')]]
+    }
 	use {
 		'hrsh7th/nvim-cmp',
 		requires = {
@@ -117,31 +167,49 @@ return require('packer').startup(function(use)
 		},
 		config = [[require('config.cmp')]]
 	}
-
 	use({
 		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
 		config = function()
 			require("lsp_lines").setup()
 		end,
 	})
+    use {
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {}
+        end
+    }
+    use {
+        'kosayoda/nvim-lightbulb',
+        requires = 'antoinemadec/FixCursorHold.nvim',
+        config = function ()
+            require('nvim-lightbulb').setup({autocmd = {enabled = true}})
+        end
+    }
+    use{
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu',
+    }
 
-	use { 'hrsh7th/vim-vsnip' }
-
+    -- DAP --------------------------------------------------------------------
 	use {
+        requires = {
+            "williamboman/mason.nvim",
+            "jay-babu/mason-nvim-dap.nvim",
+        },
 		'mfussenegger/nvim-dap',
 		config = [[require('config.dap')]]
 	}
 	use {
-		"rcarriga/nvim-dap-ui",
 		requires = {
 			"mfussenegger/nvim-dap"
 		},
+		"rcarriga/nvim-dap-ui",
 		config = function ()
 			require("dapui").setup()
 		end
 	}
-
-	use { 'mbbill/undotree' }
 
 	if packer_bootstrap then
 		require('packer').sync()

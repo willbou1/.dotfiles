@@ -1,3 +1,3 @@
-2022/10/12-21:17:50.734 2ed72d Reusing MANIFEST /home/william/.config/Vieb/Partitions/main/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/MANIFEST-000001
-2022/10/12-21:17:50.734 2ed72d Recovering log #3
-2022/10/12-21:17:50.737 2ed72d Reusing old log /home/william/.config/Vieb/Partitions/main/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/000003.log 
+2022/10/20-16:47:35.779 10ae27 Reusing MANIFEST /home/william/.config/Vieb/Partitions/main/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/10/20-16:47:35.780 10ae27 Recovering log #3
+2022/10/20-16:47:35.783 10ae27 Reusing old log /home/william/.config/Vieb/Partitions/main/IndexedDB/https_www.facebook.com_0.indexeddb.leveldb/000003.log 

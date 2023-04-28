@@ -81,6 +81,7 @@
       (box
         :halign "center"
         :orientation "h"
+        :valign "fill"
         :space-evenly false
         (label
           :markup wn
@@ -92,6 +93,7 @@
           :duration "350ms"
           (box
             :orientation "h"
+            :valign "center"
             :class "wm_revealer"
             (eventbox
               :cursor "pointer"
@@ -204,6 +206,7 @@
       (box
         :halign "center"
         :orientation "h"
+      :valign "fill"
         :space-evenly false
         (label
           :markup wn
@@ -215,6 +218,7 @@
           :duration "350ms"
           (box
             :orientation "h"
+            :valign "center"
             :class "wm_revealer"
             (eventbox
               :cursor "pointer"
@@ -240,7 +244,7 @@
       (box
         :orientation "h"
         :halign "center"
-        :class "${launch_workspaces_mon1}, test"
+        :class "${launch_workspaces_mon2}, test"
         (eventbox
           :cursor "pointer"
           (button 

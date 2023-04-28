@@ -2,15 +2,15 @@
 
 (defpoll cpu0_8
   :interval "2s"
-  "mpstat -o JSON -P ALL 1 1 | jq -a '.sysstat.hosts[0].statistics[0][\"cpu-load\"] | map(100 - .idle | floor) | .[0:8]'")
+  "mpstat -o JSON -P ALL 1 1 | jq -a '.sysstat.hosts[0].statistics[0][\"cpu-load\"] | map(100 - .idle | floor) | .[1:9]'")
 
 (defpoll cpu8_16
   :interval "2s"
-  "mpstat -o JSON -P ALL 1 1 | jq -a '.sysstat.hosts[0].statistics[0][\"cpu-load\"] | map(100 - .idle | floor) | .[8:16]'")
+  "mpstat -o JSON -P ALL 1 1 | jq -a '.sysstat.hosts[0].statistics[0][\"cpu-load\"] | map(100 - .idle | floor) | .[9:17]'")
 
 (defpoll cpu16_24
   :interval "2s"
-  "mpstat -o JSON -P ALL 1 1 | jq -a '.sysstat.hosts[0].statistics[0][\"cpu-load\"] | map(100 - .idle | floor) | .[16:24]'")
+  "mpstat -o JSON -P ALL 1 1 | jq -a '.sysstat.hosts[0].statistics[0][\"cpu-load\"] | map(100 - .idle | floor) | .[17:25]'")
 
 (defpoll cpu_usage
   :interval "2s"

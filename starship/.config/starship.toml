@@ -67,8 +67,8 @@ $openstack\
 $azure\
 $env_var\
 $crystal\
-$fill\
-$time\
+[ ]()$fill\
+[  ]()$time\
 [ ⌝](bold cyan)$line_break\
 [⌞ ](bold cyan)$sudo\
 $cmd_duration\
@@ -122,7 +122,8 @@ disabled = false
 disabled = false
 
 [fill]
-symbol = " "
+symbol = "⋅"
+style = "dimmed cyan"
 
 [time]
 format = "[$time](gray)"

@@ -31,3 +31,6 @@ g.firenvim_config = {
 
 -- undotree
 g.undotree_DiffAutoOpen = 0
+
+-- Tmux
+g.tpipeline_restore = 1

@@ -112,7 +112,7 @@
             :onhover "${eww} update media_bar_class=bar_highlighted; ${eww} update media_bar_onchange=\"scripts/media_control --seek\""
             :onhoverlost "${eww} update media_bar_class=bar_normal; ${eww} update media_bar_onchange=\"true\""
             (scale
-              :active true
+              :active false
               :min 0
               :max length
               :value position
