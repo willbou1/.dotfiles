@@ -33,6 +33,7 @@ alias free='free -h'
 alias df='df -h'
 alias p='procs'
 alias c="clear"
+alias n='ncpamixer'
 
 if test $TERM = "xterm-kitty"
 	alias icat="kitty +kitten icat"
@@ -48,6 +49,7 @@ alias calcurse-caldav='CALCURSE_CALDAV_PASSWORD=$(gpg -dq "$XDG_CONFIG_HOME"/cal
 alias vid='neovide --multigrid --nofork'
 alias w='curl -s wttr.in | less -RS'
 alias vpn='expressvpn'
+alias kpv='mpv --no-config --vo=kitty --vo-kitty-use-shm=yes'
 alias virsh='virsh -c qemu:///system'
 alias vs='virsh'
 

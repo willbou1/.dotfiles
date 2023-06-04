@@ -2,6 +2,7 @@
 
 . ~/.cache/wal/colors.sh
 
+pacwall
 pkill dunst
 pywalfox update
 pgrep -x "eww" && ~/.config/eww/launch
